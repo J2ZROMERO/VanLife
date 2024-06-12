@@ -8,7 +8,9 @@ function NavBar() {
     <>
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container className="container-fluid">
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand href="#"><Link to={"/"} className="nav-link">
+                  VanLife
+                </Link></Navbar.Brand>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -21,7 +23,7 @@ function NavBar() {
 
               <Nav.Item>
                 <Link to={"/about"} className="nav-link">
-                  ABOUT
+                  VANS
                 </Link>
               </Nav.Item>
             </Nav>

@@ -18,7 +18,7 @@ const MainHome = () => {
           </h5>
         </Col>
         <Col className="col-12 mt-5">
-          <Button className="w-100 bg-danger text-white" size="lg"  variant="primary outline-primary">Find Your place!</Button>
+          <Button className="w-100 btn-info text-white" size="lg"  variant="primary outline-primary">Find Your place!</Button>
         </Col>
       </Row>
     </Container>

@@ -1,12 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Home from "./pages/Home";
-import About from "./pages/About";
+import About from "./pages/Vans";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./style/index.css";
 import "./style/custom.scss";
 import NavBar from "./components/NavBar";
+import './server'
+
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
