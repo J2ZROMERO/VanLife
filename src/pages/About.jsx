@@ -1,10 +1,15 @@
+import { Container } from "react-bootstrap";
 
 const About = () => {
     return (
-        <div>
+        <>
+        <Container>
+        
             <h1>About</h1>
             <p>This is the about page</p>
-        </div>
+        
+        </Container>
+        </>
     )
 }
 

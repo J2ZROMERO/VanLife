@@ -1,10 +1,26 @@
+body,
+html {
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-body {
-    background-color: #f0f0f0;
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    }
-    
-    
-    
+.home-container {
+  height: calc(100vh - 75px) !important;
+
+  
+}
+
+.home-bg{
+    background-image: url("https://imgs.search.brave.com/hD1E_cVNejqBXHqb9brghdMGpE9PQ2Q9QSQTnnm_ArM/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMwMS5ueXQuY29t/L2ltYWdlcy8yMDI0/LzA2LzA1L3RyYXZl/bC8wNUNvc3RhLVJp/Y2EtU3Vuc2V0LzA1/Q29zdGEtUmljYS1T/dW5zZXQtdmlkZW9M/YXJnZS5qcGc_YXV0/bz13ZWJw");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.8; /* Adjust the opacity value as needed */
+
+}
+
+#root {
+  height: 100vh;
+}
