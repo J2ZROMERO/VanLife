@@ -6,21 +6,30 @@ import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./style/index.css";
 import "./style/custom.scss";
-import NavBar from "./components/NavBar";
-import './server'
+import Header from "./components/Nav/Header";
+import "./server";
 import Vans from "./pages/Vans";
-import VansDetails from "./pages/VansDetails";
-
+import VansDetails from "./components/Vans/VansDetails";
+import Dashboard from "./components/Host/Dashboard";
+import Income from "./components/Host/Income";
+import Reviews from "./components/Host/Reviews";
+import HeaderHost from "./components/Nav/HeaderHost";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<NavBar />}>
+        <Route element={<Header />}>
           <Route path="/" element={<Home />} />
           <Route path="/vans" element={<Vans />} />
           <Route path="/vans/:id" element={<VansDetails />} />
+          <Route path="/host" element={<HeaderHost />}>
+            <Route path="/host/dashboard" element={<Dashboard />} />
+            <Route path="/host/income" element={<Income />} />
+            <Route path="/host/review" element={<Reviews />} />
+          </Route>
+          
         </Route>
       </Routes>
     </BrowserRouter>

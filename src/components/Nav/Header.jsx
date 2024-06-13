@@ -3,7 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link, Outlet } from "react-router-dom";
 
-function NavBar() {
+function Header() {
   return (
     <>
       <Navbar expand="lg" className="bg-body-tertiary">
@@ -24,6 +24,11 @@ function NavBar() {
               </Nav.Item>
 
               <Nav.Item>
+                <Link to={"/host"} className="nav-link">
+                  HOST
+                </Link>
+              </Nav.Item>
+              <Nav.Item>
                 <Link to={"/vans"} className="nav-link">
                   VANS
                 </Link>
@@ -37,4 +42,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default Header;

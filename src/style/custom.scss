@@ -44,3 +44,9 @@ $h6-font-size: $font-size-base;
 
 /* import bootstrap to set changes */
 @import "~bootstrap/scss/bootstrap";
+
+.text-nav-link {
+  @include media-breakpoint-down(md) {
+    font-size: .8em;
+  }
+}

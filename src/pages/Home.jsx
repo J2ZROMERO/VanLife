@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import MainHome from "../components/MainHome";
+import MainHome from "../components/Home/MainHome";
 
 const Home = () => {
   return (

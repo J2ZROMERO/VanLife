@@ -18,12 +18,21 @@ const VansHome = () => {
   return (
     <>
       {data.length === 0 ? (
-        <Container className="w-100 h-100 d-flex justify-content-center align-items-center"> <Spinner animation="grow" variant="warning" /></Container>
+        <Container className="w-100 h-100 d-flex justify-content-center align-items-center">
+          {" "}
+          <Spinner animation="grow" variant="warning" />
+        </Container>
       ) : (
         data.map((e) => (
-          <CardElem key={e.id} id={e.id} img={e.imageUrl} title={e.name} text={e.type} price={e.price} />
+          <CardElem
+            key={e.id}
+            id={e.id}
+            img={e.imageUrl}
+            title={e.name}
+            text={e.type}
+            price={e.price}
+          />
         ))
-        
       )}
     </>
   );
