@@ -7,7 +7,9 @@ import CardHostDeails from "./CardHostDetails";
 const HostVansDetails = () => {
   const [details, setDetails] = useState([]);
 
+
   const { id } = useParams();
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,7 +17,6 @@ const HostVansDetails = () => {
       const result = await res.json();
       setDetails(result.vans[0]);
 
-      // Proper logging of the object
       console.log(result.vans[0], "asdadsas");
     };
     fetchData();
@@ -32,7 +33,6 @@ const HostVansDetails = () => {
           title={details.name}
           text={details.type}
           price={details.price}
-          
         />
       )}
     </Container>

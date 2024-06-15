@@ -7,33 +7,32 @@ html {
 }
 
 .home-container {
-  min-height: calc(97vh - 75px) !important;  
+  min-height: calc(97vh - 75px) !important;
 }
 
 .host-container {
-  min-height: calc(90vh - 75px) !important;  
+  min-height: calc(90vh - 75px) !important;
 }
 
-.home-bg{
-    
-    background-image: url("https://hips.hearstapps.com/hmg-prod/images/2024-ford-transit-103-657771e9c6f6b.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.8;  
-
+.home-bg {
+  background-image: url("https://hips.hearstapps.com/hmg-prod/images/2024-ford-transit-103-657771e9c6f6b.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.8;
 }
 
 .nav-active {
   color: red !important;
-  
 }
-
 
 #root {
   min-height: 100vh;
 }
 
-.host__van__selected{
+.host__van__selected {
+}
+
+.host__van__detail {
   
 }

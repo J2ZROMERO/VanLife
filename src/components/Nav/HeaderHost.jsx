@@ -13,7 +13,7 @@ function HeaderHost() {
               <Nav.Item>
                 <NavLink
                   to={"/host/dashboard"}
-                  className={({ isActive }) => (isActive ? "nav-active" : null)}
+                  className={({ isActive }) => "text-nav-link"+ (isActive ? "nav-active" : null)}
                   style={{ color: "black", "text-decoration": "none" }}
                 >
                   DASHBOARD

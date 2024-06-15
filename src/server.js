@@ -79,13 +79,12 @@ createServer({
     });
 
     this.get("/host/vans", (schema, request) => {
-      
       return schema.vans.where({ hostID: "123" });
     });
 
     this.get("/host/vans/:id", (schema, request) => {
       const id = request.params.id;
-      return schema.vans.where({id, hostID: "123"});
+      return schema.vans.where({ id, hostID: "123" });
     });
 
     this.get("/vans/:id", (schema, request) => {
@@ -94,4 +93,3 @@ createServer({
     });
   },
 });
-

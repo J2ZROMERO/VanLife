@@ -36,12 +36,12 @@ useEffect(() => {
     vans.map((e) => (
 
 
-      <Col className="m-1 d-flex justify-content-center">
-      <Link to={`/api/host/vans/${e.id}`}>
+      <Col  key={e.id} className="m-1 d-flex justify-content-center">
+      <Link to={`/host/vans/${e.id}`}>
                 
                 
             <HostCard
-            key={e.id}
+            
             img={e.imageUrl}
             title={e.name}
             price={e.price}
