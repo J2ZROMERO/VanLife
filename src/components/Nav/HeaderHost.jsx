@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 function HeaderHost() {
   return (
@@ -11,25 +11,43 @@ function HeaderHost() {
           <Container className="container d-flex w-100">
             <Nav className="me-auto d-flex flex-row w-100 justify-content-around ">
               <Nav.Item>
-                <Link to={"/host/dashboard"} className="nav-link  text-nav-link">
+                <NavLink
+                  to={"/host/dashboard"}
+                  className={({ isActive }) => (isActive ? "nav-active" : null)}
+                  style={{ color: "black", "text-decoration": "none" }}
+                >
                   DASHBOARD
-                </Link>
+                </NavLink>
               </Nav.Item>
 
               <Nav.Item>
-                <Link to={"/host/income"} className="nav-link text-nav-link">
+                <NavLink
+                  to={"/host/income"}
+                  className={({ isActive }) => (isActive ? "nav-active" : null)}
+                  style={{ color: "black", "text-decoration": "none" }}
+                >
                   INCOME
-                </Link>
+                </NavLink>
               </Nav.Item>
               <Nav.Item>
-                <Link to={"/host/vans"} className="nav-link text-nav-link">
+                <NavLink
+                  to={"/host/vans"}
+                  className={({ isActive }) =>
+                    isActive ? "nav-active" : "color: black"
+                  }
+                  style={{ color: "black", "text-decoration": "none" }}
+                >
                   VANS
-                </Link>
+                </NavLink>
               </Nav.Item>
               <Nav.Item>
-                <Link to={"/host/review"} className="nav-link text-nav-link">
+                <NavLink
+                  to={"/host/review"}
+                  className={({ isActive }) => (isActive ? "nav-active" : null)}
+                  style={{ color: "black", "text-decoration": "none" }}
+                >
                   REVIEWS
-                </Link>
+                </NavLink>
               </Nav.Item>
             </Nav>
           </Container>

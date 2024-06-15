@@ -2,8 +2,9 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 
 const MainHome = () => {
   return (
-    <Container className=" flex-grow-1 home-bg h-100 d-flex align-items-start">
-      <Row className="d-flex h-75">
+    <Container className="bg-danger home-bg  home-container">
+      
+      <Row className="d-flex">
         <Col className="col-12 mt-5">
           <h1 className="fs-1 text-white">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam,
@@ -18,7 +19,13 @@ const MainHome = () => {
           </h5>
         </Col>
         <Col className="col-12 mt-5">
-          <Button className="w-100 btn-info text-white" size="lg"  variant="primary outline-primary">Find Your place!</Button>
+          <Button
+            className="w-100 btn-info text-white"
+            size="lg"
+            variant="primary outline-primary"
+          >
+            Find Your place!
+          </Button>
         </Col>
       </Row>
     </Container>

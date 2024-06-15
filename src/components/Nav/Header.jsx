@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Link, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
@@ -9,35 +9,34 @@ function Header() {
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container className="container-fluid">
           <Navbar.Brand href="#">
-            <Link to={"/"} className="nav-link">
+            <NavLink to={"/"} className="nav-link">
               VanLife
-            </Link>
+            </NavLink>
           </Navbar.Brand>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto w-100 d-flex justify-content-end">
               <Nav.Item>
-                <Link to={"/"} className="nav-link">
+                <NavLink to={"/"} className="nav-link">
                   HOME
-                </Link>
+                </NavLink>
               </Nav.Item>
 
               <Nav.Item>
-                <Link to={"/host"} className="nav-link">
+                <NavLink to={"/host"} className="nav-link">
                   HOST
-                </Link>
+                </NavLink>
               </Nav.Item>
               <Nav.Item>
-                <Link to={"/vans"} className="nav-link">
+                <NavLink to={"/vans"} className="nav-link">
                   VANS
-                </Link>
+                </NavLink>
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Outlet />
     </>
   );
 }

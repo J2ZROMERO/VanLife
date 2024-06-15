@@ -15,6 +15,7 @@ createServer({
       imageUrl:
         "https://assets.scrimba.com/advanced-react/react-router/modest-explorer.png",
       type: "simple",
+      hostID: "123",
     });
     server.create("van", {
       id: "2",
@@ -25,6 +26,7 @@ createServer({
       imageUrl:
         "https://assets.scrimba.com/advanced-react/react-router/beach-bum.png",
       type: "rugged",
+      hostID: "123",
     });
     server.create("van", {
       id: "3",
@@ -65,6 +67,7 @@ createServer({
       imageUrl:
         "https://assets.scrimba.com/advanced-react/react-router/green-wonder.png",
       type: "rugged",
+      hostID: "123",
     });
   },
 
@@ -75,9 +78,20 @@ createServer({
       return schema.vans.all();
     });
 
+    this.get("/host/vans", (schema, request) => {
+      
+      return schema.vans.where({ hostID: "123" });
+    });
+
+    this.get("/host/vans/:id", (schema, request) => {
+      const id = request.params.id;
+      return schema.vans.where({id, hostID: "123"});
+    });
+
     this.get("/vans/:id", (schema, request) => {
       const id = request.params.id;
       return schema.vans.find(id);
     });
   },
 });
+

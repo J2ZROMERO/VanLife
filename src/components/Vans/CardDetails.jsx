@@ -9,8 +9,8 @@ const CardDetail = ({ id, img, title, description, type }) => {
   
 
   return (
-    <Col className="m-2 d-flex justify-content-center mt-3">
-      <Card style={{ width: "24rem" }}>
+    <Col className="m-2 mt-3 card-details">
+      <Card  className="host__van__selected" style={{ width: "24rem" }}>
         <Card.Img variant="top" src={img} />
         <Card.Body className="text-center">
           <Card.Title className="text-center">{title}</Card.Title>

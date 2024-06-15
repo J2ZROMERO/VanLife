@@ -1,0 +1,11 @@
+@mixin resizeCards( $display: flex, $justifyContent: center, $alignItems: center ) {
+    display: $display;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+@mixin arrangeCards( $display: "", $justifyContent: "", $alignItems: "") {
+    display: $display;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
