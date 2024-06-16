@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
-const CardElem = ({id,img, title, text, price, searchParams }) => {
+const CardElem = ({id,img, title, text, price, searchParams, typeF }) => {
 
     
   return (
@@ -15,7 +15,12 @@ const CardElem = ({id,img, title, text, price, searchParams }) => {
           <Card.Text className="text-center">
              $: {price}
           </Card.Text>
-        <Link to={`${id}`} state={{search: `?${searchParams.toString()}`}} >
+        <Link to={`${id}`} state={{
+
+          search: `?${searchParams.toString()}`,
+          type: typeF
+          
+          }} >
         
         
           <Button className="btn text-center"  variant="primary">{text}</Button>

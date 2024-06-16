@@ -42,6 +42,7 @@ const typeFilter = searchParams.get("type");
             title={e.name}
             text={e.type}
             price={e.price}
+            typeF={typeFilter}
             searchParams={searchParams}
           />
           

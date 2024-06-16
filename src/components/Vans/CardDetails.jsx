@@ -1,4 +1,4 @@
-import { Col } from "react-bootstrap";
+import { Col, Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link, useLocation } from "react-router-dom";
@@ -8,18 +8,22 @@ import { faLeftLong } from "@fortawesome/free-solid-svg-icons";
 const CardDetail = ({ img, title, description, type }) => {
   const location = useLocation();
 
-  
-  const search = location.state?.search || ''
-  console.log(search);
+  const search = location.state?.search || "all";
+  const typeFilter = location.state?.type || "all";
+
+  console.log(typeFilter);
 
   return (
     <>
       <Link to={`..${search}`} relative="path">
         {" "}
-        <FontAwesomeIcon
-          icon={faLeftLong}
-          class="fa-solid fa-heart fa-beat"
-        />{" "}
+        <Container className="w-100 d-flex align-items-center text-center mt-3">
+          <FontAwesomeIcon
+            icon={faLeftLong}
+            class="fa-solid fa-heart fa-beat mt-0"
+          />{" "}
+          <h6 className="ms-4">Back to {typeFilter} Vans</h6>
+        </Container>
       </Link>
 
       <Col className="m-2 mt-3 card-details">
