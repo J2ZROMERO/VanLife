@@ -9,7 +9,7 @@ const VansHome = () => {
 const [searchParams, setSearchParams] = useSearchParams();
 
 const typeFilter = searchParams.get("type");
-console.log(typeFilter);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -42,6 +42,7 @@ console.log(typeFilter);
             title={e.name}
             text={e.type}
             price={e.price}
+            searchParams={searchParams}
           />
           
         ))

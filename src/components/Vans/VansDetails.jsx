@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 import "../../server";
 import { useParams } from "react-router-dom";
 import { Container, Spinner } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-const VansDetails = () => {
+const VansDetails = ({ searchParams }) => {
   const [data, setData] = useState({});
 
+  
   const id = useParams().id;
 
   useEffect(() => {
@@ -19,7 +21,7 @@ const VansDetails = () => {
   }, []);
 
   return (
-    <>
+    <Container>
       {Object.entries(data).length === 0 ? (
         <Container className="w-100 h-100 d-flex justify-content-center align-items-center">
           {" "}
@@ -35,7 +37,7 @@ const VansDetails = () => {
           type={data.type}
         />
       )}
-    </>
+    </Container>
   );
 };
 

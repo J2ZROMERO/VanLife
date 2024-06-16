@@ -11,6 +11,7 @@ import { Outlet } from "react-router-dom";
 const HostVansDetails = () => {
   const [details, setDetails] = useState([]);
 
+
   const { id } = useParams();
 
   useEffect(() => {
@@ -44,7 +45,7 @@ const HostVansDetails = () => {
       )}
 
       <NavCardHostDetailSelected />
-      <Outlet context={{details}} />
+      <Outlet context={{ details }} />
     </Container>
   );
 };

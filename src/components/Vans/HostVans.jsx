@@ -37,7 +37,7 @@ useEffect(() => {
 
 
       <Col  key={e.id} className="m-1 d-flex justify-content-center">
-      <Link to={`/host/vans/${e.id}`}>
+      <Link to={`${e.id}`}>
                 
                 
             <HostCard
