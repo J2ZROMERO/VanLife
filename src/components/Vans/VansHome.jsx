@@ -1,21 +1,30 @@
 import { useEffect, useState } from "react";
 import { Container, Spinner } from "react-bootstrap";
 import CardElem from "./Card";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 const VansHome = () => {
   const [data, setData] = useState([]);
+
+const [searchParams, setSearchParams] = useSearchParams();
+
+const typeFilter = searchParams.get("type");
+console.log(typeFilter);
 
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch("api/vans");
       const result = await res.json();
-      
       setData(result.vans);
     };
     fetchData();
   }, []);
 
+
+  const handleFilter = typeFilter ? 
+  data.filter(e => e.type.toLowerCase() === typeFilter):
+  data
+    
   return (
     <>
       {data.length === 0 ? (
@@ -24,8 +33,8 @@ const VansHome = () => {
           <Spinner animation="grow" variant="warning" />
         </Container>
       ) : (
-        data.map((e) => (
-          
+        handleFilter.map((e) => (
+           
           <CardElem
             key={e.id}
             id={e.id}

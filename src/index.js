@@ -17,6 +17,10 @@ import HeaderHost from "./components/Nav/HeaderHost";
 import HomeLay from "./components/Layout/HomeLay";
 import HostVans from "./components/Vans/HostVans";
 import HostVansDetails from "./components/Vans/HostVansDetails";
+import HostSelectedVans from "./components/Vans/HostSelectedVans";
+import HostSelectedPricing from "./components/Vans/HostSelectedPricing";
+import HostSelectedPhotos from "./components/Vans/HostSelectedPhotos";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -32,7 +36,14 @@ root.render(
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="income" element={<Income />} />
             <Route path="vans" element={<HostVans />} />
-            <Route path="vans/:id" element={<HostVansDetails />} />
+
+            <Route path="vans/:id" element={<HostVansDetails />}>
+              <Route index element={<HostSelectedVans />} />
+              <Route path="details" element={<HostSelectedVans />} />
+              <Route path="pricing" element={<HostSelectedPricing />} />
+              <Route path="photos" element={<HostSelectedPhotos />} />
+            </Route>
+
             <Route path="review" element={<Reviews />} />
           </Route>
         </Route>

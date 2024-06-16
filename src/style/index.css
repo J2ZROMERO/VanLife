@@ -36,3 +36,8 @@ html {
 .host__van__detail {
   
 }
+ .fa-heart {
+  color: red !important;
+  width: 2rem;
+  margin-top: 2%;
+}
