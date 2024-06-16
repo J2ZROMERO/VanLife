@@ -3,6 +3,11 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink, Outlet } from "react-router-dom";
 const NavCardHostDetailSelected = () => {
+
+
+
+
+
   return (
     <>
       <Container className="container  d-flex justify-content-center ">
