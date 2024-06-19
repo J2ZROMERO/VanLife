@@ -5,7 +5,7 @@ export async function fetchVans() {
     throw {
       status: res.status,
       statusText: res.statusText,
-      datoExtra: "algun dato extras",
+      datoExtra: "Fallo al obtener los vans",
     };
   }
 

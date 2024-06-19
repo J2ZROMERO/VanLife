@@ -1,30 +1,42 @@
 import { useEffect, useState } from "react";
 import { Container, Spinner } from "react-bootstrap";
 import CardElem from "./Card";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
+import { fetchVans } from "../api/Api";
+import { useLoaderData } from "react-router-dom";
+
+export const loader = async () => {
+  const res = await fetchVans();
+  const data = await res;
+  return data;
+};
 
 const VansHome = () => {
-  const [data, setData] = useState([]);
+  const data = useLoaderData().vans;
+  console.log(data);
 
-const [searchParams, setSearchParams] = useSearchParams();
+  // const [data, setData] = useState([]);
 
-const typeFilter = searchParams.get("type");
+  const [searchParams, setSearchParams] = useSearchParams();
 
+  const typeFilter = searchParams.get("type");
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("api/vans");
-      const result = await res.json();
-      setData(result.vans);
-    };
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const res = await fetchVans();
+  //     const dat = await res;
 
+  //     setData(dat.vans || []);
+  //   };
+  //   fetchData();
+  // }, []);
 
-  const handleFilter = typeFilter ? 
-  data.filter(e => e.type.toLowerCase() === typeFilter):
-  data
-    
+  // setData(valueLoader.vans || []);
+
+  const handleFilter = typeFilter
+    ? data.filter((e) => e.type.toLowerCase() === typeFilter)
+    : data;
+
   return (
     <>
       {data.length === 0 ? (
@@ -34,7 +46,6 @@ const typeFilter = searchParams.get("type");
         </Container>
       ) : (
         handleFilter.map((e) => (
-           
           <CardElem
             key={e.id}
             id={e.id}
@@ -45,7 +56,6 @@ const typeFilter = searchParams.get("type");
             typeF={typeFilter}
             searchParams={searchParams}
           />
-          
         ))
       )}
     </>

@@ -1,9 +1,7 @@
-
 import Container from "react-bootstrap/Container";
 import MainHome from "../components/Home/MainHome";
 
-
-const Home = () => {
+const Home = (props) => {
   return (
     <Container className="home-container">
       <MainHome />

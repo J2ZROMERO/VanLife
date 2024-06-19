@@ -79,8 +79,9 @@ createServer({
 
   routes() {
     this.namespace = "api";
-
+    // this.timing = 10000;
     this.get("/vans", (schema, request) => {
+      // return new Response(400, {}, { errors: "you a re not autorizado" });
       return schema.vans.all();
     });
 
