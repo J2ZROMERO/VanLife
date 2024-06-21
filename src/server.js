@@ -1,8 +1,9 @@
-import { createServer, Model } from "miragejs";
+import { createServer, Model, Response } from "miragejs";
 
 createServer({
   models: {
     vans: Model,
+    users: Model, // Ensure the model name is plural 'users'
   },
 
   seeds(server) {
@@ -75,13 +76,18 @@ createServer({
       hostID: "123",
       visibility: "public",
     });
-  },
+     server.create("user", {
+      id: "123",
+      email: "b@b.com", 
+      password: "p123", 
+      name: "calors bob"
+    })
+  },  
 
   routes() {
     this.namespace = "api";
-    // this.timing = 10000;
+
     this.get("/vans", (schema, request) => {
-      // return new Response(400, {}, { errors: "you a re not autorizado" });
       return schema.vans.all();
     });
 
@@ -97,6 +103,22 @@ createServer({
     this.get("/vans/:id", (schema, request) => {
       const id = request.params.id;
       return schema.vans.find(id);
+    });
+
+    this.post("/login", (schema, request) => {
+      const { email, password } = JSON.parse(request.requestBody);
+      const foundUser = schema.users.findBy({ email, password });
+      if (!foundUser)  {
+        console.log(foundUser + "foundUser")
+        return new Response(401, {}, { errors: ["Invalid credentials"] });
+
+      }
+
+      foundUser.password = undefined; // Don't return the password in the response
+      return {
+        user: foundUser,
+        token: "Enjoy your pizza, here's your token",
+      };
     });
   },
 });

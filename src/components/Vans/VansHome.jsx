@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, Spinner } from "react-bootstrap";
+import { Container, Row, Spinner } from "react-bootstrap";
 import CardElem from "./Card";
 import { useSearchParams } from "react-router-dom";
 import { fetchVans } from "../api/Api";
@@ -12,8 +12,7 @@ export const loader = async () => {
 };
 
 const VansHome = () => {
-  const data = useLoaderData().vans;
-  console.log(data);
+  const data = useLoaderData();
 
   // const [data, setData] = useState([]);
 
@@ -38,13 +37,14 @@ const VansHome = () => {
     : data;
 
   return (
-    <>
-      {data.length === 0 ? (
-        <Container className="w-100 d-flex min-vh-75 justify-content-center align-items-center">
-          {" "}
-          <Spinner animation="grow" variant="warning" />
-        </Container>
-      ) : (
+    <Row>
+      {
+        // data.length === 0 ? (
+        //   <Container className="w-100 d-flex min-vh-75 justify-content-center align-items-center">
+        //     {" "}
+        //     <Spinner animation="grow" variant="warning" />
+        //   </Container>
+        // ) : (
         handleFilter.map((e) => (
           <CardElem
             key={e.id}
@@ -56,9 +56,10 @@ const VansHome = () => {
             typeF={typeFilter}
             searchParams={searchParams}
           />
+          // )
         ))
-      )}
-    </>
+      }
+    </Row>
   );
 };
 

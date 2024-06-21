@@ -2,8 +2,7 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 
 const MainHome = () => {
   return (
-    <Container className="bg-danger home-bg  home-container">
-      
+    <Container className="bg-info home-bg  home-container">
       <Row className="d-flex">
         <Col className="col-12 mt-5">
           <h1 className="fs-1 text-white">
@@ -24,7 +23,7 @@ const MainHome = () => {
             size="lg"
             variant="primary outline-primary"
           >
-            Find Your place!
+            Find Your Van!
           </Button>
         </Col>
       </Row>

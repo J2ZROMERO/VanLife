@@ -2,12 +2,12 @@ import { Container } from "react-bootstrap";
 import { useOutletContext } from "react-router-dom";
 
 const HostSelectedPricing = () => {
-  const { details } = useOutletContext();
+  const { data} = useOutletContext();
   return (
     <Container className="mt-4">
       <h6 className="mt-2">
         {" "}
-        <strong>Price: </strong>  $ {details.price} 
+        <strong>Price: </strong>  $ {data.price} 
       </h6>
     </Container>
   );

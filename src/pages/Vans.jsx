@@ -11,9 +11,9 @@ const Vans = () => {
       <Container className="">
         <h1 className="text-center">Vans</h1>
         <Filter searchParams={searchParams} setSearchParams={setSearchParams} />
-        <Row className="">
+        <Container className="bg-info">
           <VansHome />
-        </Row>
+        </Container>
       </Container>
     </>
   );

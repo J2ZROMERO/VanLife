@@ -33,6 +33,11 @@ function Header() {
                   VANS
                 </NavLink>
               </Nav.Item>
+              <Nav.Item>
+                <NavLink to={"/login"} className="nav-link">
+                  LOGIN
+                </NavLink>
+              </Nav.Item>
             </Nav>
           </Navbar.Collapse>
         </Container>
