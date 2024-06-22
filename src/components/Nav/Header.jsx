@@ -2,8 +2,12 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 function Header() {
+  const [user, setUser] = useState(localStorage.getItem("isLoggedIn"));
+
+
   return (
     <>
       <Navbar expand="lg" className="bg-body-tertiary">
@@ -35,6 +39,7 @@ function Header() {
               </Nav.Item>
               <Nav.Item>
                 <NavLink to={"/login"} className="nav-link">
+                  
                   LOGIN
                 </NavLink>
               </Nav.Item>

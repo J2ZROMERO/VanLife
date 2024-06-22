@@ -9,10 +9,9 @@ import { requireAuth } from "../../utils/Utils";
 
 export async function loader() {
   const res = await requireAuth();
-  
+const logeado = localStorage.getItem("isLoggedIn");
 
-
-  return getHostVans();
+  return logeado ? getHostVans() : res;
 }
 
 const HostVans = () => {

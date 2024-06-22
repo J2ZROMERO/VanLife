@@ -1,7 +1,7 @@
 import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { redirect, useLoaderData, useNavigate } from "react-router-dom";
 import Alert from "react-bootstrap/Alert";
 import { useState } from "react";
 import { login } from "../api/Api";
@@ -14,6 +14,7 @@ function Login() {
   const [status, setStatus] = useState("idle"); // idle, pending, resolved, rejected
   const [error, setError] = useState(null); // null, error message
   const data = useLoaderData();
+  const [user, setUser] = useState(localStorage.getItem("isLoggedIn")); // null, user object
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
@@ -28,8 +29,9 @@ function Login() {
       setStatus("submitting");
       const response = await login(formData);
       setError(null);
+      localStorage.setItem("isLoggedIn", true);
+      setUser("algo dentr");
       navigate("/host/vans", { reaplace: true, state: { message: response } });
-      
     } catch (error) {
       // Ensure the error is a string
       // console.log(error);
@@ -49,10 +51,23 @@ function Login() {
     }));
   };
 
+  const SetFakeUser = () => {
+    localStorage.removeItem("isLoggedIn");
+    setUser(null);
+  };
+ console.log(user)
   return (
     <>
       {data && <Alert variant="warning">{data}</Alert>}
       {error && <Alert variant="danger">{error}</Alert>}
+      <Container className="text-end">
+        {user  && (
+          <Button variant="warning" onClick={SetFakeUser}>
+            {" "}
+            Delete user{" "}
+          </Button>
+        )}
+      </Container>
       <Container id="login-form" className="home-container d-flex">
         <Container className="d-flex justify-content-center align-items-start">
           <Form
